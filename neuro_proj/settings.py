@@ -3,6 +3,9 @@ from pathlib import Path
 import dj_database_url
 from decouple import Csv, config
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Basic Configurations
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 CORS_ALLOW_ALL_ORIGINS = config("CORS_ALLOW_ALL_ORIGINS", default=False, cast=bool)
@@ -20,10 +23,6 @@ DATABASES = {
         conn_max_age=600,
     )
 }
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Application definition
