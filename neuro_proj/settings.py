@@ -1,4 +1,16 @@
 from pathlib import Path
+import dj_database_url
+from decouple import Csv, config
+
+# Basic Configurations
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+CORS_ALLOW_ALL_ORIGINS = config("CORS_ALLOW_ALL_ORIGINS", default=False, cast=bool)
+CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", cast=Csv())
+CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
+DEBUG = config("DEBUG", default=True, cast=bool)
+MODE = config("MODE", default="dev", cast=str)
+SECRET_KEY = config("SECRET_KEY")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
