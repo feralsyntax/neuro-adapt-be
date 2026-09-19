@@ -1,12 +1,12 @@
 from django.db import models
 
 
-class SourceType(models.TextChoices):
+class DocumentSourceType(models.TextChoices):
     PDF = "pdf", "PDF"
     DOCX = "docx", "DOCX"
 
 
-class ProcessingStatus(models.TextChoices):
+class DocumentProcessingStatus(models.TextChoices):
     PENDING = "pending", "Pending"
     PROCESSING = "processing", "Processing"
     COMPLETED = "completed", "Completed"
