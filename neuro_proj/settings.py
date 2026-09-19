@@ -64,6 +64,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "neuro_proj.urls"
 
+# Rest Framework Configs
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_PARSER_CLASSES": [
+        "rest_framework.parsers.JSONParser",
+    ],
+}
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
